@@ -17,26 +17,26 @@ const useStyles = createStyles((theme) => ({
     transform: 'translate(-50%, -50%)',
   },
   sector: {
-    fill: theme.colors.dark[6],
-    color: theme.colors.dark[0],
+    fill: '#E6CCCC',
+    color: '#010000',
 
     '&:hover': {
       fill: theme.fn.primaryColor(),
       '> g > text, > g > svg > path': {
-        fill: '#fff',
+        fill: '#010000',
       },
     },
     '> g > text': {
-      fill: theme.colors.dark[0],
+      fill: '#010000',
     },
   },
   backgroundCircle: {
-    fill: theme.colors.dark[6],
+    fill: '#010000',
   },
   centerCircle: {
     fill: theme.fn.primaryColor(),
-    color: '#fff',
-    stroke: theme.colors.dark[6],
+    color: '#010000',
+    stroke: 'white',
     strokeWidth: 4,
     '&:hover': {
       fill: theme.colors[theme.primaryColor][theme.fn.primaryShade() - 1],
@@ -50,7 +50,7 @@ const useStyles = createStyles((theme) => ({
     pointerEvents: 'none',
   },
   centerIcon: {
-    color: '#fff',
+    color: '#010000',
   },
 }));
 
@@ -172,7 +172,7 @@ const RadialMenu: React.FC = () => {
                       <text
                         x={iconX}
                         y={iconY + (item.label.includes('  \n') ? 7 : 25)}
-                        fill="#fff"
+                        fill="#010000"
                         textAnchor="middle"
                         pointerEvents="none"
                       >
@@ -210,7 +210,7 @@ const RadialMenu: React.FC = () => {
               icon={!menu.sub && menu.page < 2 ? 'xmark' : 'arrow-rotate-left'}
               fixedWidth
               className={classes.centerIcon}
-              color="#fff"
+              color="#010000"
               size="2x"
             />
           </div>

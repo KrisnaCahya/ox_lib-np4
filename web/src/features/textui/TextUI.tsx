@@ -26,7 +26,7 @@ const useStyles = createStyles((theme, params: { position?: TextUiPosition }) =>
     padding: 12,
     margin: 8,
     width: 300,
-    color: theme.colors.dark[0],
+    color: 'theme.colors.dark[0]',
     fontFamily: 'Roboto',
     display: 'flex',
     justifyContent: 'center',
@@ -50,7 +50,7 @@ const useStyles = createStyles((theme, params: { position?: TextUiPosition }) =>
     fontFamily: 'Roboto',
     fontSize: '20px',
     fontWeight: 'bold',
-    textShadow: '0 0 5px #50bcaf40, 0 0 5px #50bcaf40, 0 0 5px #50bcaf40, 0 0 5px #50bcaf40'
+    textShadow: '0 0 5px #FF2700, 0 0 5px #FF2700, 0 0 5px #FF2700, 0 0 5px #FF2700'
   },
   shape: {
     width: '100%',
@@ -65,13 +65,13 @@ const useStyles = createStyles((theme, params: { position?: TextUiPosition }) =>
     height: '5px',
     margin: 'auto',
     marginTop: -5,
-    boxShadow: '0 0 5px #50bcaf40, 0 0 5px #50bcaf40, 0 0 5px #50bcaf40, 0 0 5px #50bcaf40',
-    background: 'rgb(63, 224, 152)',
+    boxShadow: '0 0 5px #FF2700, 0 0 5px #FF2700, 0 0 5px #FF2700, 0 0 5px #FF2700',
+    background: 'rgba(165, 23, 0, 0.925)',
   },
   contentContainer: {
     fontFamily: 'Roboto',
     borderRadius: 5,
-    background: 'linear-gradient(90deg, rgba(38, 94, 86, 0.984) 0%, rgba(31, 79, 72, 1) 100%, rgba(181,181,181,1) 66%, rgba(255,255,255,0) 100%)',
+    background: 'linear-gradient(90deg, rgba(165, 23, 0, 0.925) 0%, rgba(116, 23, 0, 0.925) 50%, rgba(104, 23, 0, 0.925) 100%, rgba(255,255,255,0) 100%)',
     padding: '5%',
     color: 'white',
     border: '1px solid rgb(128, 128, 128)',

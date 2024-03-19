@@ -38,10 +38,10 @@ const useStyles = createStyles((theme) => ({
     borderWidth: '0.12rem',
     borderStyle: 'solid',
     borderColor: 'rgba(110, 110, 119, 0.925)',
-    background: ' radial-gradient(circle, rgba(255, 255, 255, 0.089) 0%, rgba(77, 79, 87, 0.177) 100%)',
+    background: 'radial-gradient(circle, rgba(255, 255, 255, 0.089) 0%, rgba(77, 79, 87, 0.177) 100%)',
     '&:hover': {
       transition: 'all 0.5s',
-      borderColor: 'rgb(77, 164, 151)',
+      borderColor: 'rgba(181, 28, 28, 0.925)',
       borderStyle: 'solid',
       borderWidth: '0.12rem',
       backgroundColor: 'radial-gradient(circle, rgba(38, 94, 86, 0.684) 0%, rgba(31, 79, 72, 0.256) 100%)',
