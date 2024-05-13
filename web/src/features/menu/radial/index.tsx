@@ -17,7 +17,7 @@ const useStyles = createStyles((theme) => ({
     transform: 'translate(-50%, -50%)',
   },
   sector: {
-    fill: '#E6CCCC',
+    fill: '#EFE1E1',
     color: '#010000',
 
     '&:hover': {
