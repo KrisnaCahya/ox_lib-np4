@@ -28,17 +28,17 @@ const useStyles = createStyles((theme, params: { disabled?: boolean; readOnly?: 
     height: 'fit-content',
     width: '100%',
     transition: 'all 0.5s',
-    borderColor: params.disabled ? 'rgb(101, 44, 45)' : 'rgba(110, 110, 119, 0.925)',
+    borderColor: params.disabled ? 'rgb(119, 80, 169)' : 'rgba(110, 110, 119, 0.925)',
     borderStyle: 'solid',
     borderWidth: '0.12rem',
     background: params.disabled ? 'radial-gradient(circle, rgba(255, 255, 255, 0.089) 0%, rgba(77, 79, 87, 0.177) 100%) !important' : 'radial-gradient(circle, rgba(255, 255, 255, 0.089) 0%, rgba(77, 79, 87, 0.177) 100%)',
     padding: 10,
     '&:hover': {
       transition: 'all 0.5s',
-      borderColor: params.disabled ? 'rgb(137, 60, 61)' : 'rgba(181, 28, 28, 0.925)',
+      borderColor: params.disabled ? 'rgb(119, 80, 169)' : 'rgba(102, 51, 153, 0.925)',
       borderStyle: 'solid',
       borderWidth: '0.12rem',
-      backgroundColor: params.readOnly ? 'radial-gradient(circle, rgba(38, 94, 86, 0.684) 0%, rgba(31, 79, 72, 0.256) 100%)' : 'radial-gradient(circle, rgba(133, 58, 59, 0.089) 0%, rgba(105,46,47, 0.177) 100%) !important',
+      backgroundColor: params.readOnly ? 'radial-gradient(circle, rgba(38, 94, 86, 0.684) 0%, rgba(31, 79, 72, 0.256) 100%)' : 'radial-gradient(circle, rgba(138, 114, 190, 0.089) 0%, rgba(119, 80, 169, 0.177) 100%) !important',
       cursor: params.readOnly ? 'unset' : 'pointer',
     },
     '&:active': {
@@ -49,7 +49,7 @@ const useStyles = createStyles((theme, params: { disabled?: boolean; readOnly?: 
     maxWidth: '25px',
   },
   description: {
-    color: params.disabled ? 'radial-gradient(circle, rgba(133, 58, 59, 0.089) 0%, rgba(105,46,47, 0.177) 100%) !important' : 'radial-gradient(circle, rgba(38, 94, 86, 0.684) 0%, rgba(31, 79, 72, 0.256) 100%)',
+    color: params.disabled ? 'radial-gradient(circle, rgba(138, 114, 190, 0.089) 0%, rgba(119, 80, 169, 0.177) 100%) !important' : 'radial-gradient(circle, rgba(38, 94, 86, 0.684) 0%, rgba(31, 79, 72, 0.256) 100%)',
     fontSize: 12,
   },
   dropdown: {
@@ -58,7 +58,7 @@ const useStyles = createStyles((theme, params: { disabled?: boolean; readOnly?: 
     borderStyle: 'solid',
     borderWidth: '0.12rem',
     borderColor: 'rgba(110, 110, 119, 0.925)',
-    background: 'radial-gradient(circle, rgba(116, 23, 0, 0.925) 50%, rgba(104, 23, 0, 0.925) 100%)',
+    background: 'radial-gradient(circle, rgba(138, 114, 190, 0.925) 50%, rgba(119, 80, 169, 0.925) 100%)',
     fontSize: 14,
     maxWidth: 256,
     width: 'fit-content',

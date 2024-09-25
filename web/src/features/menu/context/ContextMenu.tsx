@@ -1,11 +1,12 @@
 import { useNuiEvent } from '../../../hooks/useNuiEvent';
-import { Box, createStyles, Flex, Stack, Text } from '@mantine/core';
+import { Box, createStyles, Flex, Stack, Text, TextInput } from '@mantine/core';
 import { useEffect, useState } from 'react';
 import { ContextMenuProps } from '../../../typings';
 import ContextButton from './components/ContextButton';
 import { fetchNui } from '../../../utils/fetchNui';
 import ReactMarkdown from 'react-markdown';
 import HeaderButton from './components/HeaderButton';
+import LibIcon from '../../../components/LibIcon';
 import ScaleFade from '../../../transitions/ScaleFade';
 import MarkdownComponents from '../../../config/MarkdownComponents';
 
@@ -33,7 +34,7 @@ const useStyles = createStyles((theme) => ({
     gap: 6,
   },
   titleContainer: {
-    borderRadius: 4,
+    borderRadius: 5,
     flex: '1 85%',
     borderWidth: '0.12rem',
     borderStyle: 'solid',
@@ -41,7 +42,7 @@ const useStyles = createStyles((theme) => ({
     background: 'radial-gradient(circle, rgba(255, 255, 255, 0.089) 0%, rgba(77, 79, 87, 0.177) 100%)',
     '&:hover': {
       transition: 'all 0.5s',
-      borderColor: 'rgba(181, 28, 28, 0.925)',
+      borderColor: 'rgba(102, 51, 153, 0.925)',
       borderStyle: 'solid',
       borderWidth: '0.12rem',
       backgroundColor: 'radial-gradient(circle, rgba(38, 94, 86, 0.684) 0%, rgba(31, 79, 72, 0.256) 100%)',
@@ -49,7 +50,7 @@ const useStyles = createStyles((theme) => ({
   },
   titleText: {
     color: theme.colors.dark[0],
-    padding: 6,
+    padding: 5,
     textAlign: 'center',
   },
   buttonsContainer: {
@@ -59,11 +60,21 @@ const useStyles = createStyles((theme) => ({
   buttonsFlexWrapper: {
     gap: 3,
   },
+  searchTextInput: {
+    marginBottom: 3,
+    borderColor: 'rgba(110, 110, 119, 0.925)',
+    borderStyle: 'solid',
+    borderWidth: '0.12rem',
+    backgroundColor: 'radial-gradient(circle, rgba(38, 94, 86, 0.684) 0%, rgba(31, 79, 72, 0.256) 100%)',
+    borderRadius: 5,
+    padding: 10,
+  },
 }));
 
 const ContextMenu: React.FC = () => {
   const { classes } = useStyles();
   const [visible, setVisible] = useState(false);
+  const [setText, setTextInput] = useState('');
   const [contextMenu, setContextMenu] = useState<ContextMenuProps>({
     title: '',
     options: { '': { description: '', metadata: [] } },
@@ -97,6 +108,7 @@ const ContextMenu: React.FC = () => {
     }
     setContextMenu(data);
     setVisible(true);
+    setTextInput('');
   });
 
   return (
@@ -116,11 +128,32 @@ const ContextMenu: React.FC = () => {
             </Box>
             <HeaderButton icon="xmark" canClose={contextMenu.canClose} iconSize={18} handleClick={closeContext} />
           </Flex>
+          <Box className={classes.searchTextInput}>
+          <TextInput
+            styles={{ 
+              input: { backgroundColor: 'rgba(110, 110, 119, 0.13)'},
+            }}
+            icon={ <LibIcon icon={"magnifying-glass"} fontSize={20} fixedWidth /> }
+            onChange={(event) => {
+              var lowerCase = event.target.value.toLowerCase();
+              setTextInput(lowerCase);
+            }}
+            placeholder='Search...'
+          />
+        </Box>
           <Box className={classes.buttonsContainer}>
             <Stack className={classes.buttonsFlexWrapper}>
-              {Object.entries(contextMenu.options).map((option, index) => (
-                <ContextButton option={option} key={`context-item-${index}`} />
-              ))}
+              {Object.entries(contextMenu.options).map((option, index) => 
+                setText !== '' ? (
+                  ((option[1].title && option[1].title.toLowerCase().includes(setText.toLowerCase())) ||
+                    (option[1].description &&
+                      option[1].description.toLowerCase().includes(setText.toLowerCase()))) && (
+                    <ContextButton option={option} key={`context-item-${index}`} />
+                  )
+                ) : (
+                  <ContextButton option={option} key={`context-item-${index}`} />
+                )
+              )}
             </Stack>
           </Box>
         </ScaleFade>
